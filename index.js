@@ -3,7 +3,12 @@ const path = require('path'); // importa para utilizar os caminhos
 
 const app = express(); // Inicializa o app
 const server = require('http').createServer(app); // criando o servidor
-const io = require('socket.io')(server); // importando e utilizando o socketio no servidor
+const io = require('socket.io')(server, {
+    cors: {
+        origins: ["http://localhost:3000"],
+        methods: ["GET", "POST"]
+    }
+ }); // importando e utilizando o socketio no servidor
 
 app.use(express.static(path.join(__dirname, 'public')));  //utilizando a pasta public para abrir arquivos html
 app.set('views', path.join(__dirname, 'public'));// declarando que public será utilizado como views
