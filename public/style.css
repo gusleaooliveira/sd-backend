@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Lato;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 70px;
+    background-color: #0a66c2;
+    padding-left: 20px;
+    box-shadow: 1px 1px 1px gray;
+}
+
+header h1{
+    color: white;
+}
+
+#chat, #formulario{
+    margin-left: 500px;
+}
+
+#chat{
+    margin-top: 30px;
+    background-color: rgb(235, 232, 232);
+    width: 400px;
+    padding: 10px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.usuario-msg{
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+/* .msg{
+    margin-bottom: 16px;
+} */
+
+#formulario input[type="text"]{
+    width: 160px;
+}
+
+#formulario button{
+    width: 70px;
+    height: 50px;
+    border: none;
+    background-color: #0a66c2;
+    border-radius: 5px;
+}
+
+#formulario input{
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid rgb(170, 167, 167);
+    margin-top: 5px;
+}
+
+.msg-item{
+    border-bottom: 1px solid rgb(177, 176, 176);
+    padding-bottom: 10px;
+}
+
+.fa-paper-plane{
+    font-size: 1.3rem;
+    color: white;
+}

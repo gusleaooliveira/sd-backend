@@ -4,28 +4,33 @@
         <meta charset="utf-8" />
 
         <title>Servidor</title>
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js" integrity="sha512-PU5S6BA03fRv1Q5fpwXjg5nlRrgdoguZ74urFInkbABMCENyx5oP3hrDzYMMPh3qdLdknIvrGj3yqZ4JuU7Nag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-
-        <h3>Mensagens:</h3>
+        <header>
+            <h1>Messages</h1>
+        </header>
+        <!-- <h3>Mensagens:</h3> -->
         <div id="chat">
         </div>
 
         <form onsubmit="return false" id="formulario">
             <input type="text" id="usuario" placeholder="Digite seu usuário" />
             <input type="text" id="mensagem" placeholder="Digite uma mensagem" />
-            <input type="submit" id="btn" value="Enviar" />
+            <button id="btn"><i class="fas fa-paper-plane"></i></button>
         </form>
 
         <script>
             let socket = io('http://localhost:3000')
 
             function renderizar(mensagem){
-                $('#chat').append(`<p><b>Usuário:</b>${mensagem.usuario}</p>\n<p><b>Mensagem:</b> ${mensagem.mensagem}</p>`)
+                $('#chat').append(`<div class="msg-item" ><p class="usuario-msg" >${mensagem.usuario}</p>\n<p class="msg" >${mensagem.mensagem}</p></div>`)
             }
 
             socket.on('previousMessages', function(msgs){
